@@ -4,7 +4,7 @@ containers:
   build-env:
     image: openjdk:8u181-jdk
     volumes:
-      - local: .
+      - local: $HOST_PWD
         container: /code
         options: cached
       - type: cache
@@ -36,7 +36,7 @@ containers:
   docker-push-env:
     build_directory: .batect/docker-push-env
     volumes:
-      - local: .
+      - local: $HOST_PWD
         container: /code
         options: cached
       - local: /var/run/docker.sock

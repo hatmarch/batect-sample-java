@@ -1,0 +1,71 @@
+{
+	"name": "Java Sample",
+	"dockerFile": "Dockerfile",
+	"runArgs" : [
+		"-v", "/var/run/docker.sock:/var/run/docker.sock",
+		"-v", "/tmp:/tmp",
+		"-e", "HOST_PWD=${localWorkspaceFolder}"
+	],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"java.home": "/usr/local/openjdk-8"
+	},
+	
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"vscjava.vscode-java-pack",
+		"redhat.vscode-xml",
+		"joaompinto.asciidoctor-vscode",
+		// REST CLIENT for querying elastic search
+		"humao.rest-client",	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Comment out to run as root instead.
+	//"remoteUser": "vscode"
+}
+// {
+// 	"name": "Spring Petclinic",
+// 	"dockerFile": "Dockerfile",
+// 	"runArgs": [
+// 		// pull in local aws creds
+// 		"-v", "${env:HOME}/.aws:/home/jboss/.aws",
+// 		// Allow piggy-backing on any local credentials
+// 		"-v", "${env:HOME}/.kube:/home/jboss/.kube",
+// 		// pull in ssh keys from host
+// 		"-v", "${env:HOME}/.ssh:/home/jboss/.ssh",
+// 		// When opened as a submodule, the .git file references the 
+// 		// .git directory in the (relative) directory above (at least how)
+// 		// the repo is setup now).  This command allows us to mount the .git 
+// 		// directory in the same relative location so we can checkin 
+// 		// changes to the submodule repo from the devcontainer.
+// 		// NOTE: If this is run from a non-submodule the .git mount will
+// 		// not point to anything and will be ignored.
+// 		"-v", "${localWorkspaceFolder}/../.git:/workspaces/.git",
+// 		// mount the maven cache locally
+// 		"-v", "${localWorkspaceFolder}/../.m2-spring-petclinic/:/home/jboss/.m2",
+// 		"-e", "AWS_PROFILE=redhat"
+// 		,"-v", "/var/run/docker.sock:/var/run/docker.sock"
+// 		//"AWS_PROFILE=${env:AWS_PROFILE}"
+// 	],
+// 	"extensions": [
+// 		"vscjava.vscode-java-pack",
+// 		"redhat.vscode-xml",
+// 		"joaompinto.asciidoctor-vscode",
+// 		// REST CLIENT for querying elastic search
+// 		"humao.rest-client",
+// 		"adashen.vscode-tomcat",
+// 		//"summersun.vscode-jetty"
+// 	],
+// 	"settings":{
+// 		"java.home": "/usr/lib/jvm/java-1.8.0",
+// 		"terminal.integrated.shell.linux": "/bin/zsh",
+// 		"tomcat.workspace": "/opt/webserver"
+// 	}
+// }
