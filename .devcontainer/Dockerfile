@@ -29,7 +29,7 @@ RUN apt-get update \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     #
     # Verify git, needed tools installed
-    && apt-get -y install git openssh-client less iproute2 procps curl lsb-release \
+    && apt-get -y install docker.io git openssh-client less iproute2 procps curl lsb-release \
     #
     # Install Maven
     && mkdir -p /usr/share/maven /usr/share/maven/ref \
